@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Invitaciones Digitales | Foro 7 - Arturo Cruz</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>💍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #3B82F6;
+            --accent: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .contact {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-light);
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--light);
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 1rem 0.5rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: #059669;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .highlight {
+            background: #FEF3C7;
+            padding: 2rem;
+            border-left: 5px solid #F59E0B;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: #6B7280;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>💍 Portfolio - Invitaciones Digitales</h1>
+        <p>Diseños elegantes y funcionales para eventos inolvidables</p>
+        <p class="contact">📱 WhatsApp: 477-920-3776</p>
+        <div>
+            <a href="https://github.com/ArturoCruzArm/invitacion-boda-abraham-laura" target="_blank" class="btn">Ver Proyecto Abraham & Laura</a>
+            <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20una%20invitación%20digital" target="_blank" class="btn btn-secondary">Contactar por WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>🎨 Proyecto Destacado: Boda Abraham & Laura</h2>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">10.5</div>
+                    <div class="stat-label">Horas de desarrollo</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2,656</div>
+                    <div class="stat-label">Líneas de código</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Secciones</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Responsive</div>
+                </div>
+            </div>
+
+            <h3>✨ Características Implementadas</h3>
+            <ul class="feature-list">
+                <li>Sistema generativo con patrones auténticos de Talavera Poblana</li>
+                <li>Cuenta regresiva en tiempo real hasta el 19/12/2026</li>
+                <li>Mapa interactivo embebido de Google Maps</li>
+                <li>RSVP con botones directos de WhatsApp</li>
+                <li>Música de fondo con control de reproducción</li>
+                <li>Diseño responsive (móvil, tablet, desktop)</li>
+                <li>Documentos profesionales: contrato y logística</li>
+                <li>Optimización de rendimiento (GPU < 5%)</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>🎯 Resultados:</strong> Invitación completamente funcional, elegante y optimizada.
+                Cliente satisfecho con diseño único de Talavera Poblana.
+            </div>
+
+            <a href="https://github.com/ArturoCruzArm/invitacion-boda-abraham-laura" target="_blank" class="btn">Ver Código Fuente en GitHub</a>
+        </div>
+
+        <div class="section">
+            <h2>💰 Paquetes de Servicios</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🥉 Básico</h3>
+                    <div class="price">$500</div>
+                    <p><strong>Ideal para eventos sencillos</strong></p>
+                    <ul class="feature-list">
+                        <li>Invitación digital completa</li>
+                        <li>10 secciones estándar</li>
+                        <li>Mapa interactivo</li>
+                        <li>RSVP por WhatsApp</li>
+                        <li>Música de fondo</li>
+                        <li>1 revisión incluida</li>
+                        <li>Entrega en 3-5 días</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🥈 Plus</h3>
+                    <div class="price">$700</div>
+                    <p><strong>Mayor personalización</strong></p>
+                    <ul class="feature-list">
+                        <li>Todo del Paquete Básico</li>
+                        <li>Documentos HTML profesionales</li>
+                        <li>Patrones generativos personalizados</li>
+                        <li>2 revisiones incluidas</li>
+                        <li>Soporte 30 días</li>
+                        <li>Entrega en 5-7 días</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🥇 Premium</h3>
+                    <div class="price">$1,000</div>
+                    <p><strong>Máxima personalización</strong></p>
+                    <ul class="feature-list">
+                        <li>Todo del Paquete Plus</li>
+                        <li>Diseño 100% personalizado</li>
+                        <li>Galería de fotos</li>
+                        <li>RSVP con base de datos</li>
+                        <li>Dominio personalizado incluido</li>
+                        <li>5 revisiones incluidas</li>
+                        <li>Soporte 60 días</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Ventajas de Invitaciones Digitales</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🌱 Ecológicas</h3>
+                    <p>Sin impresión en papel, cero desperdicio</p>
+                </div>
+
+                <div class="card">
+                    <h3>💰 Económicas</h3>
+                    <p>$500 vs $1,000+ de impresión tradicional</p>
+                </div>
+
+                <div class="card">
+                    <h3>📱 Interactivas</h3>
+                    <p>Mapas, música, confirmación instantánea</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔄 Actualizables</h3>
+                    <p>Cambios de horario en tiempo real</p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Fácil distribución</h3>
+                    <p>Link compartible por WhatsApp</p>
+                </div>
+
+                <div class="card">
+                    <h3>✨ Modernas</h3>
+                    <p>Diseño profesional y elegante</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Tecnologías Utilizadas</h2>
+            <ul class="feature-list">
+                <li><strong>HTML5</strong> - Estructura semántica</li>
+                <li><strong>CSS3</strong> - Diseño responsive con Grid y Flexbox</li>
+                <li><strong>JavaScript</strong> - Interactividad sin frameworks pesados</li>
+                <li><strong>Canvas API</strong> - Generación de patrones</li>
+                <li><strong>Google Maps API</strong> - Mapas interactivos</li>
+                <li><strong>Git & GitHub</strong> - Control de versiones</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📞 Contacto</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                <strong>Foro 7 - Arturo Cruz</strong><br>
+                Fotografía, Video e Invitaciones Digitales
+            </p>
+
+            <div style="font-size: 1.3rem; margin: 1.5rem 0;">
+                📱 <strong>WhatsApp:</strong> 477-920-3776<br>
+                🏦 <strong>BBVA:</strong> 4152 3137 6890 8985<br>
+                🌐 <strong>GitHub:</strong> <a href="https://github.com/ArturoCruzArm" target="_blank">@ArturoCruzArm</a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="https://wa.me/5214779203776?text=Hola,%20me%20interesa%20una%20invitación%20digital" target="_blank" class="btn btn-secondary">
+                    💬 Enviar WhatsApp
+                </a>
+                <a href="https://github.com/ArturoCruzArm/portfolio-invitaciones-digitales" target="_blank" class="btn">
+                    📄 Ver Documentación Completa
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Foro 7 - Arturo Cruz</strong></p>
+        <p>Invitaciones Digitales • Fotografía • Video</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Desarrollado con ❤️ usando Claude Code</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">© 2026 - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
